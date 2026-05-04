@@ -1,0 +1,17 @@
+[Unit]
+Description=API REST Todo
+After=network.target
+
+[Service]
+User=todoapp
+WorkingDirectory=/opt/todo-api
+EnvironmentFile=/opt/todo-api/.env
+ExecStart=/usr/bin/node src/server.js
+Restart=on-failure
+NoNewPrivileges=yes
+ProtectSystem=full
+PrivateTmp=yes
+ReadWritePaths=/var/lib/todo-api
+
+[Install]
+WantedBy=multi-user.target
