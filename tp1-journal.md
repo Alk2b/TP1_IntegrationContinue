@@ -262,5 +262,3 @@ sudo systemctl status nginx           # statut du processus
 > La commande `nginx -t` va indiquer la ligne exacte de l'erreur dans les fichiers de configuration.
 
 ---
-
-*Compte rendu rédigé à l'issue de la réalisation complète du TP1.*

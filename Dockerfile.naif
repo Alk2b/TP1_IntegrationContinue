@@ -1,0 +1,14 @@
+FROM node:20-alpine
+WORKDIR /app
+
+# On installe les outils lourds qui vont rester bloqués dans l'image
+RUN apk add --no-cache python3 make g++
+
+COPY package*.json ./
+# On installe tout, y compris les dépendances de développement
+RUN npm install
+
+COPY . .
+
+EXPOSE 3000
+CMD ["node", "src/server.js"]
